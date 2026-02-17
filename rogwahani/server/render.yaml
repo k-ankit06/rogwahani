@@ -1,0 +1,19 @@
+services:
+    - type: web
+      name: rogwahani-api
+      runtime: node
+      buildCommand: npm install
+      startCommand: node app.js
+      envVars:
+          - key: DATABASE
+            sync: false
+          - key: CLOUDINARY_CLOUD_NAME
+            sync: false
+          - key: CLOUDINARY_API_KEY
+            sync: false
+          - key: CLOUDINARY_API_SECRET
+            sync: false
+          - key: JWT_SECRET
+            sync: false
+          - key: FRONTEND_URL
+            sync: false
