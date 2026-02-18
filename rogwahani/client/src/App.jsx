@@ -1,8 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AuthGuard from "./routes/AuthGuard";
 import { useSelector } from "react-redux";
+
+// Splash Screen
+import SplashScreen from "./pages/SplashScreen/SplashScreen";
+import "./pages/SplashScreen/SplashScreen.css";
 
 // pages
 import LandingPageNavbar from "./pages/LandingPage/Navbar";
@@ -36,9 +40,17 @@ import All_users from "./pages/Admin/All_users/All_users";
 import Hospitals from "./pages/Admin/Hospitals/Hospitals";
 
 const App = () => {
+    const [showSplash, setShowSplash] = useState(true);
     const { user, token } = useSelector((state) => state.auth);
-    console.log("User:", user);
-    console.log("Token:", token);
+
+    const handleSplashFinish = useCallback(() => {
+        setShowSplash(false);
+    }, []);
+
+    // Show splash screen
+    if (showSplash) {
+        return <SplashScreen onFinish={handleSplashFinish} />;
+    }
 
     return (
         <Router>

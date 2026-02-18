@@ -1,0 +1,383 @@
+/* ═══════════════════════════════════════════════════════ */
+/*  RogWahani Splash Screen — Premium Medical Theme       */
+/* ═══════════════════════════════════════════════════════ */
+
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ─── Background Layers ─── */
+.splash-bg-base {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 25%, #0d0d0d 50%, #1a0000 75%, #0a0a0a 100%);
+}
+
+.splash-bg-radial {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse at 20% 80%, rgba(220, 38, 38, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(239, 68, 68, 0.05) 0%, transparent 50%);
+}
+
+/* ─── Animated Grid ─── */
+.splash-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220, 38, 38, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridPulse 4s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ─── Particles ─── */
+.splash-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.8), rgba(220, 38, 38, 0.2));
+    pointer-events: none;
+}
+
+/* ─── Pulse Rings ─── */
+.splash-pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid rgba(220, 38, 38, 0.3);
+    pointer-events: none;
+}
+
+/* ─── Heartbeat Line ─── */
+.splash-heartbeat-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+.splash-heartbeat-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Center Content ─── */
+.splash-center {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ─── Logo ─── */
+.splash-logo-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-logo-glow {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.3) 0%, transparent 70%);
+    filter: blur(20px);
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.splash-logo-border {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #dc2626, #991b1b, #dc2626);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.3),
+        0 0 80px rgba(220, 38, 38, 0.1),
+        inset 0 0 20px rgba(220, 38, 38, 0.1);
+    animation: borderRotate 6s linear infinite;
+}
+
+@keyframes borderRotate {
+    0% {
+        background: linear-gradient(0deg, #dc2626, #991b1b, #dc2626);
+    }
+    25% {
+        background: linear-gradient(90deg, #dc2626, #991b1b, #dc2626);
+    }
+    50% {
+        background: linear-gradient(180deg, #dc2626, #991b1b, #dc2626);
+    }
+    75% {
+        background: linear-gradient(270deg, #dc2626, #991b1b, #dc2626);
+    }
+    100% {
+        background: linear-gradient(360deg, #dc2626, #991b1b, #dc2626);
+    }
+}
+
+.splash-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #0a0a0a;
+    padding: 15px;
+}
+
+/* ─── Title ─── */
+.splash-title-container {
+    text-align: center;
+    position: relative;
+}
+
+.splash-title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin: 0;
+    line-height: 1.1;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.splash-title-rog {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.splash-title-wahani {
+    background: linear-gradient(135deg, #ef4444, #dc2626, #b91c1c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.4));
+}
+
+.splash-title-underline {
+    height: 3px;
+    margin-top: 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, #dc2626, #ef4444, #dc2626, transparent);
+    transform-origin: center;
+}
+
+/* ─── Tagline ─── */
+.splash-tagline {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ─── Feature Icons Row ─── */
+.splash-features {
+    display: flex;
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.splash-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.splash-feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444;
+    font-size: 1.2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.splash-feature-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* ─── Loading Bar ─── */
+.splash-loader-track {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.splash-loader-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #dc2626, #ef4444, #dc2626);
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+    position: relative;
+}
+
+.splash-loader-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+    border-radius: 999px;
+}
+
+/* ─── Corner Decorations ─── */
+.splash-corner {
+    position: absolute;
+    color: rgba(220, 38, 38, 0.15);
+    font-size: 1.5rem;
+    font-weight: 200;
+    font-family: monospace;
+    pointer-events: none;
+}
+
+.splash-corner-tl {
+    top: 30px;
+    left: 30px;
+}
+
+.splash-corner-tr {
+    top: 30px;
+    right: 30px;
+}
+
+.splash-corner-bl {
+    bottom: 30px;
+    left: 30px;
+}
+
+.splash-corner-br {
+    bottom: 30px;
+    right: 30px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+    .splash-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .splash-tagline {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .splash-logo-border {
+        width: 110px;
+        height: 110px;
+    }
+
+    .splash-logo-glow {
+        width: 140px;
+        height: 140px;
+    }
+
+    .splash-features {
+        gap: 16px;
+    }
+
+    .splash-feature-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .splash-feature-label {
+        font-size: 0.55rem;
+    }
+
+    .splash-loader-track {
+        width: 160px;
+        bottom: 40px;
+    }
+
+    .splash-corner {
+        font-size: 1rem;
+    }
+
+    .splash-corner-tl,
+    .splash-corner-tr {
+        top: 15px;
+    }
+
+    .splash-corner-bl,
+    .splash-corner-br {
+        bottom: 15px;
+    }
+
+    .splash-corner-tl,
+    .splash-corner-bl {
+        left: 15px;
+    }
+
+    .splash-corner-tr,
+    .splash-corner-br {
+        right: 15px;
+    }
+}
